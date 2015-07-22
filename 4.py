@@ -10,7 +10,7 @@ while nothing.isdigit():
 	response = urllib2.urlopen(url + nothing).read()
 	print response
 	try:
-		nothing = re.search('(?<=the next nothing is )(\d+)', response).group(0)
+		nothing = re.findall('the next nothing is (\d+)', response)[0]
 	except:
 		if 'Divide by two' in response:
 			nothing = str(int(nothing) / 2)

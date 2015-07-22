@@ -13,7 +13,7 @@ while nothing.isdigit():
 	info = zf.getinfo('{0}.txt'.format(nothing))
 	comments.append(info.comment)
 	try:
-		nothing = re.search('(?<=Next nothing is )(\d+)', content).group(0)
+		nothing = re.findall('Next nothing is (\d+)', content)[0]
 	except:
 		break
 
